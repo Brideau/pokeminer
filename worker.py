@@ -204,7 +204,6 @@ class Slave(threading.Thread):
                             'last_modified_time': pokemon['last_modified_timestamp_ms'],
                             'time_until_hidden_ms': pokemon['time_till_hidden_ms']
                         }
-                        logger.info(webhook_data)
                         self.send_to_webhook('pokemon', webhook_data)
                     for fort in map_cell.get('forts', []):
                         if not fort.get('enabled'):
