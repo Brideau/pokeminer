@@ -190,7 +190,7 @@ class Slave(threading.Thread):
                                 pokemon, map_cell['current_timestamp_ms']
                             )
                         )
-                        # Prepare and send the pokemon data to the web hook listeners
+                        # Prepare and send the pokemon data to the webhook listeners
                         d_t = datetime.utcfromtimestamp(
                             (pokemon['last_modified_timestamp_ms'] +
                              pokemon['time_till_hidden_ms']) / 1000.0)
@@ -237,7 +237,7 @@ class Slave(threading.Thread):
 
     @staticmethod
     def send_to_webhook(message_type, message):
-        """Sends the Pokemon data to each subscribing web hook endpoit"""
+        """Sends the Pokemon data to each subscribing webhook endpoit"""
         data = {
             'type': message_type,
             'message': message
